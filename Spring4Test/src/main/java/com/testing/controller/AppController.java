@@ -26,7 +26,7 @@ public class AppController {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("display");
 		view.addObject("view",k);
-		
+		//SOme change
 		return view;
 	}
 	
