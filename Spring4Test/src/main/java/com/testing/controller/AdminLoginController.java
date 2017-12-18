@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.testing.model.AdminLogin;
 import com.testing.model.AdminRegistration;
 import com.testing.service.AdminLoginServices;
+import com.testing.validater.User;
 
 @Controller
 public class AdminLoginController {
@@ -19,8 +21,9 @@ public class AdminLoginController {
 	AdminLoginServices loginsservice;
 	
 	@RequestMapping(value ={"adminlogin"}, method=RequestMethod.GET)
-	public String adminLoginjsp(){
-				
+	public String adminLoginjsp(ModelMap model){
+		User user = new User();
+	model.put("userForm", user);
 		return "login";
 	}
 	
@@ -30,7 +33,7 @@ public class AdminLoginController {
 	}
 	
 	@RequestMapping(value ={"/login"}, method=RequestMethod.POST)
-	public String adminLogin(@Valid AdminLogin login,BindingResult result,ModelMap model){
+	public String adminLogin(@Valid @ModelAttribute("userForm") User userForm/* ,AdminLogin login*/,BindingResult result,ModelMap model){
 		System.out.println("login controller");
 		
 		if(result.hasErrors()){
@@ -38,14 +41,14 @@ public class AdminLoginController {
 			return "login";
 		}
 		
-		if(loginsservice.adminLogin(login)){
+	/*	if(loginsservice.adminLogin(login)){
 			String email=login.getUsername();
 			model.addAttribute("email", email);
 			
 			return "success";
 		}
-		
-		return "login";
+		*/
+		return "success";
 	}
 	
 
