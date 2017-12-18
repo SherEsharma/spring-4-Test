@@ -11,5 +11,6 @@
 shubham <%= request.getAttribute("view")  %>
 <br>
 result is : ${view} 
+<a href="ViewUser.html">ViewRegistration</a><br>
 </body>
 </html>

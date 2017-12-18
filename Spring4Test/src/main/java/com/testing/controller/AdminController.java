@@ -1,5 +1,7 @@
 package com.testing.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.testing.model.AdminRegistration;
 import com.testing.service.AdminRegistrationService;
+
 
 
 @Controller
@@ -19,8 +24,7 @@ public class AdminController {
 
 	@Autowired
 		AdminRegistrationService registrationservice;
-	
-	
+		
 	@RequestMapping(value= {"Adminregistration"}, method=RequestMethod.GET)
 	public String Adminregistrationjsp(Model model){
 		System.out.println("Admin Registration Controller");
@@ -39,6 +43,10 @@ public class AdminController {
 			return "AdminRegistration";
 		}
 		registrationservice.addAdmin(registration);
-		return "error";
+		return "login";
 	}
+	
+	
+	
+	
 }

@@ -1,11 +1,14 @@
 package com.testing.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.testing.dao.AdminRegistrationDao;
+import com.testing.model.AdminLogin;
 import com.testing.model.AdminRegistration;
 
 @Service("registrationservice")
@@ -18,5 +21,5 @@ public class AdminRegistrationServiceImpl implements AdminRegistrationService {
 		registrationdao.addAdmin(adminRegistration);
 		
 	}
-	
+
 }

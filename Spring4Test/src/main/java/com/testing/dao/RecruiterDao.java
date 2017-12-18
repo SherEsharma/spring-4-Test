@@ -4,9 +4,8 @@ import java.util.List;
 
 import com.testing.model.AdminRegistration;
 
-public interface AdminRegistrationDao {
+public interface RecruiterDao {
+	List<AdminRegistration> findAllUser();
 	
-	public void addAdmin(AdminRegistration adminRegistration);
-	
-
+	public void delete(int id);
 }
