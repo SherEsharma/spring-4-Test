@@ -30,7 +30,9 @@ public class AppController {
 		return view;
 	}
 	
-	//@RequestMapping("/login" , method=RequestMethod.GET)
+	
+	
+	
 	@RequestMapping(value ={"/login"}, method=RequestMethod.POST)
 	/*public ModelAndView Checkuser(HttpServletRequest request, HttpServletResponse response){*/
 	public ModelAndView Checkuser(@RequestParam("username")String username,@RequestParam("password") String password){
@@ -47,12 +49,7 @@ public class AppController {
 			model.setViewName("error");
 		}
 		
-		/*if(username.equals("shubham")&&password.equals("123456")){
-			model.setViewName("success");
-		}
-		else{
-			model.setViewName("error");
-		}*/
+	
 		return model;
 		
 		

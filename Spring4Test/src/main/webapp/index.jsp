@@ -1,12 +1,9 @@
 <html>
 <body>
-<h2>Login Page</h2>
-<form action="login" method="post">
-UserName: <input type="text" name="username"><br>
-Password: <input type="password" name="password"><br>
+<h2>Admin Login Page</h2>
+<a href="Adminregistration.html">Admin Registration</a>
 
-<input type="submit">  
-</form>
+
 
 </body>
 </html>

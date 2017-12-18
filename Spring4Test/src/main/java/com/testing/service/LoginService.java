@@ -9,9 +9,9 @@ public class LoginService {
 	
 	public boolean checklogin(String username,String password){
 		
-		String url="jdbc:mysql://localhost:3306/trabaajoadmin";
+		String url="jdbc:mysql://localhost:3306/tempdb";
 		String user="root";
-		String pass="root";
+		String pass="";
 		String sql=null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
