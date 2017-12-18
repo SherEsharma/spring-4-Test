@@ -30,7 +30,7 @@ Password: <input type="password" name="password"><br>
 </head>
 <body>
 	<div align="center">
-		<h2>Spring MVC Form Validation Demo - Login Form</h2>
+		<h2>Trabaajo Admin Login Form</h2>
 		<table border="0" width="90%">
 		<form:form action="login" commandName="userForm">
 				<tr>

@@ -8,11 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="adminregistration")
 public class AdminLogin implements Serializable {
-	
+	@NotEmpty
 	/**
 	 * 
 	 */
@@ -21,6 +24,7 @@ public class AdminLogin implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="admin_id")
+	
 	private Integer adminId;	
 	
 	public Integer getAdminId() {
@@ -30,6 +34,9 @@ public class AdminLogin implements Serializable {
 		this.adminId = adminId;
 	}
 	@Column(name="admin_email")
+	
+	@NotEmpty(message = "Please enter your password.")
+	@Size(min = 6, max = 15, message = "Your password must between 6 and 15 characters")
 	private String username;
 	
 	@Column(name="admin_password")
